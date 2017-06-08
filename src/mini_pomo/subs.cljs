@@ -2,6 +2,19 @@
   (:require [re-frame.core :refer [reg-sub]]))
 
 (reg-sub
-  :get-greeting
+  :time
   (fn [db _]
-    (:greeting db)))
+    (-> db
+       :time)))
+
+(reg-sub
+  :timer-running
+  (fn [db _]
+    (-> db
+       :timer-running)))
+
+(reg-sub
+  :timer
+  (fn [db _]
+    (-> db
+       :timer)))
